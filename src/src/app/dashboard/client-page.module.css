@@ -1,0 +1,551 @@
+/* ======================================================
+   HOME PAGE - PROFESSIONAL RESPONSIVE CSS MODULE
+====================================================== */
+
+.backgroundWrapper {
+  position: fixed;
+  inset: 5rem 0 0 0;
+  display: flex;
+  flex-direction: column;
+
+  background:
+    linear-gradient(
+      104.67deg,
+      rgba(0, 0, 0, 0.05) 1.12%,
+      rgba(0, 0, 0, 0.02) 40.61%,
+      rgba(0, 0, 0, 0) 59.47%,
+      rgba(0, 0, 0, 0.12) 131.64%
+    ),
+    var(--login-main-background);
+
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+.contentArea {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.footerWrapper {
+  height: 68px;
+  flex-shrink: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* =======================
+   GRID
+======================= */
+
+.gridWrapper {
+  display: grid;
+  width: 100%;
+  min-width: 0;
+  min-height: 100%;
+
+  gap: 16px;
+  padding: 16px;
+
+  /* PERFECT 3 COLUMN FIT */
+  grid-template-columns: 1fr 1.45fr 1fr;
+}
+
+.gridWrapper > * {
+  min-width: 0;
+}
+
+.columnWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+}
+
+.flexFill,
+.flex {
+  flex: 1;
+  min-width: 0;
+}
+
+/* =======================
+   CARD
+======================= */
+
+.mainCard {
+  width: 100%;
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 16px;
+
+  padding: 16px;
+  background: rgb(251, 250, 250);
+  border-radius: 0;
+  box-shadow: 0px 4px 10px var(--theme-box-shadow);
+}
+
+/* =======================
+   HEADER
+======================= */
+
+.headerRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.headerRowWrapper {
+  width: 100%;
+  display: flex;
+  gap: 14px;
+  min-width: 0;
+}
+
+.accountOverViewColumn {
+  flex: 1;
+  min-width: 0;
+}
+
+.cardTitle {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+/* =======================
+   ICON
+======================= */
+
+.iconHolder {
+  flex-shrink: 0;
+}
+
+.iconMask {
+  width: 40px;
+  height: 40px;
+  background-color: var(--theme-secondary);
+
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+}
+
+/* =======================
+   TEXT
+======================= */
+
+.subContent {
+  margin-top: 4px;
+  font-size: 12px;
+  color: var(--dashboard-details);
+}
+
+.contentTitle {
+  font-size: 12px;
+  color: var(--dashboard-details);
+}
+
+.contentDetails,
+.contentsText,
+.boldText {
+  font-weight: 700;
+}
+
+.contentDetails {
+  font-size: 13px;
+}
+
+/* =======================
+   ROWS
+======================= */
+
+.dataRowContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.dataRow {
+  width: 100%;
+  min-height: 44px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0px;
+
+  padding: 5px 12px;
+
+  background: var(--theme-surface);
+  border-radius: 0px;
+}
+
+.dataRowButtonWrapper {
+  position: relative;
+}
+
+/* =======================
+   BUTTONS
+======================= */
+
+.buttonRow {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.saveButton {
+  min-width: 140px;
+  height: 42px;
+}
+
+/* =======================
+   LOGO
+======================= */
+
+.logo {
+  width: 100%;
+  max-width: 300px;
+  aspect-ratio: 2 / 1;
+
+  margin: 0 auto;
+
+  background-image: var(--brand-card);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.logoMinSize,
+.fillColumn {
+  height: auto;
+}
+
+.column {
+  width: 100%;
+}
+
+/* =======================
+   CHARTS
+======================= */
+
+/* FIX: Each layer is a flex column that grows to fill its parent.
+   This ensures the chart fills the card height with no gap at the
+   bottom, and ResizeObserver in the chart component gets a real
+   non-zero pixel height to pass to Ignite UI. */
+
+.chartWrapper {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-width: 0;
+  min-height: 420px !important;
+  overflow: hidden;
+}
+
+.chartInner {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.chartFill {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  /* Floor height — chart won't collapse below this on any screen */
+  min-height: 360px;
+}
+
+.chartFill :global(svg),
+.chartFill :global(canvas) {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+.donutContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* =======================
+   INFO
+======================= */
+
+.infoButtonPosition {
+  position: absolute;
+  top: -4px;
+  right: -18px;
+}
+
+.infoBoxPosition {
+  position: relative;
+  width: 16px;
+  height: 16px;
+}
+
+.imageContain {
+  object-fit: contain;
+}
+
+.infoImagePadding {
+  padding: 4px;
+}
+
+/* =======================
+   DIALOG
+======================= */
+
+.dialogOverlay {
+  position: fixed;
+  inset: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 100;
+}
+
+.dialogContainer {
+  width: min(480px, 92%);
+  padding: 20px;
+
+  background: var(--theme-surface);
+  border-radius: 18px;
+
+  box-shadow: 0 20px 40px var(--theme-box-shadow);
+}
+
+.dialogHeader {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.dialogTitle {
+  flex: 1;
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.closeBtn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.closeX {
+  width: 24px;
+  height: 24px;
+}
+
+.infoTextContainer {
+  margin-top: 12px;
+}
+
+.infoTextContent {
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* =======================
+   CARD MANAGEMENT
+======================= */
+
+.cardManagementHeaderRow {
+  flex-shrink: 0;
+}
+
+.cardManagementButtonRow {
+  margin-top: auto;
+}
+
+/* =======================
+   DATA ROW
+======================= */
+
+.dataRowContents {
+  flex: 1;
+  min-width: 0;
+}
+
+/* =======================
+   GRAPH HEADER
+======================= */
+
+.graphHeaderRowContents {
+  width: 100%;
+}
+
+/* =======================
+   1536px / NORMAL LAPTOP
+======================= */
+
+@media (max-width: 1536px) {
+  .gridWrapper {
+    grid-template-columns: 1fr 1.4fr 1fr;
+    gap: 14px;
+    padding: 14px;
+  }
+}
+
+/* =======================
+   SMALLER LAPTOP
+======================= */
+
+@media (max-width: 1366px) {
+  .gridWrapper {
+    grid-template-columns: 1fr 1.32fr 1fr;
+    gap: 12px;
+    padding: 12px;
+  }
+
+  .mainCard {
+    padding: 14px;
+  }
+}
+
+/* =======================
+   SMALL LAPTOP
+======================= */
+
+@media (max-width: 1180px) {
+  .gridWrapper {
+    grid-template-columns: 1fr 1.2fr 1fr;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .mainCard {
+    padding: 12px;
+  }
+}
+
+/* =======================
+   TABLET
+======================= */
+
+@media (max-width: 980px) {
+  .gridWrapper {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 16px;
+  }
+}
+
+/* =======================
+   MOBILE
+======================= */
+
+@media (max-width: 768px) {
+  .mainCard {
+    padding: 14px;
+  }
+
+  .buttonRow {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .saveButton {
+    width: 100%;
+  }
+}
+
+/* =======================
+   TABLET
+======================= */
+
+@media (max-width: 980px) {
+  .gridWrapper {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 16px;
+  }
+
+  .chartFill {
+    min-height: 400px;
+  }
+}
+
+/* =======================
+   MOBILE
+======================= */
+
+@media (max-width: 768px) {
+  .mainCard {
+    padding: 14px;
+  }
+
+  .buttonRow {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .saveButton {
+    width: 100%;
+  }
+
+  .chartFill {
+    min-height: 360px;
+  }
+}
+
+/* =======================
+   SMALL MOBILE
+   Force a taller chart so bars are always readable
+======================= */
+
+@media (max-width: 480px) {
+  .gridWrapper {
+    padding: 10px;
+    gap: 12px;
+  }
+
+  .mainCard {
+    padding: 12px;
+  }
+
+  .headerRowWrapper {
+    gap: 10px;
+  }
+
+  .dataRow {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .contentDetails {
+    width: 100%;
+  }
+
+  .chartFill {
+    min-height: 320px;
+  }
+}
